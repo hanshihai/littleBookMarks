@@ -6,5 +6,13 @@ Page({
   data: {
     hip : "This is add page"
   },
-  onLoad: function(){}
+  onLoad: function(){
+    wx.getSystemInfo({
+      success: res => {
+        this.setData({
+          hip : res.model + ' | ' + res.version
+        })
+      }
+    })
+  }
 })
